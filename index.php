@@ -28,6 +28,7 @@ if(!function_exists('georgian_slug')){
             'ქ' => 'q',
             'ღ' => 'g',
             'ყ' => 'y',
+            'შ' => 'ch',
             'ჩ' => 'ch',
             'ც' => 'ts',
             'ძ' => 'dz',
