@@ -1,13 +1,16 @@
 <?php
+
 /*
 	Created & Modified by Flakena
 	© Flakena
 */
-if(!function_exists('sluggable')){
-    function sluggable($str, $options = array('transliterate' => true))
+
+class Sluggable
+{
+    public static function make($str, $options = array('transliterate' => true))
     {
-         $str = mb_convert_encoding((string)$str, 'UTF-8', mb_list_encodings());
-        
+        $str = mb_convert_encoding((string)$str, 'UTF-8', mb_list_encodings());
+
         $defaults = array(
             'delimiter' => '-',
             'limit' => null,
@@ -34,7 +37,7 @@ if(!function_exists('sluggable')){
             'u' => 'u', 'v' => 'v', 'w' => 'w', 'x' => 'x', 'y' => 'y', 'z' => 'z',
 
             //Symbols
-            '&' => '&', '!' => '!', '@' => '@', '#' => '#', '$' => '$', '(' => '(', ')' => ')', '%' => '%', '^' => '^', '*' => '*','©' => '(c)',
+            '&' => '&', '!' => '!', '@' => '@', '#' => '#', '$' => '$', '(' => '(', ')' => ')', '%' => '%', '^' => '^', '*' => '*', '©' => '(c)',
 
             // Latin
             'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A', 'Å' => 'A', 'Æ' => 'AE', 'Ç' => 'C',
@@ -116,5 +119,4 @@ if(!function_exists('sluggable')){
         return $options['lowercase'] ? mb_strtolower($str, 'UTF-8') : $str;
     }
 }
-
 ?>
